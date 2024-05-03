@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Social Nyetwork: Register New Account</title>
+        
+        <style>
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+        
+        main {
+            display: flex;
+            height: 100%;
+        }
+
+        form {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+            display: inline-block;
+            margin: auto;
+            max-height: 65%;
+            max-width: 60%;
+            min-height: 20em;
+            min-width: 25em;
+            overflow: auto;
+            padding: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        section div + div {
+            margin-top: 1em;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        input, textarea {
+            border: 1px solid #999;
+            box-sizing: border-box;
+            font: 1em sans-serif;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #000;
+        }
+
+        form button {
+            margin-top: 1em;
+        }
+        </style>
+    </head>
+    <body>
+        <main>
+            <form action="/register" method="post">
+                <h1>Registration form</h1>
+                <p>Required fields are followed by <span aria-label="required">*</span>.</p>
+                
+                <section>
+                    <h2>Credentials</h2>
+                    <div>
+                        <label for="login">
+                            <span>Login</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="username" autofocus id="login" minlength="3" maxlength="255" name="Login" required type="text" />
+                    </div>
+                    <div>
+                        <label for="password">
+                            <span>Password</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="new-password" id="password" minlength="5" name="Password" required type="password" />
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Personal Data</h2>
+                    <div>
+                        <label for="full-name">
+                            <span>Full Name</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="name" id="full-name" maxlength="1500" name="FullName" required type="text" />
+                    </div>
+                    <div>
+                        <label for="birthday">
+                            <span>Birthday</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="bday" id="birthday" name="Birthday" required type="date" />
+                    </div>
+                    <div>
+                        <label for="gender">
+                            <span>Gender</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <select id="gender" name="Gender" required>
+                            <option value=""></option>
+                            <option value="FEMALE">Female</option>
+                            <option value="MALE">Male</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="phone">Phone Number</label>
+                        <input autocomplete="tel" id="phone" name="Phone" type="tel" />
+                    </div>
+                    <div>
+                        <label for="mail">E-mail</label>
+                        <input autocomplete="email" id="mail" maxlength="320" name="Email" type="email" />
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Regional Data</h2>
+                    <div>
+                        <label for="country">
+                            <span>Country</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="country-name" id="country" name="Country" required type="text" />
+                    </div>
+                    <div>
+                        <label for="country-region">Country Region</label>
+                        <input autocomplete="country-name" id="country-region" name="CountryRegion" type="text" />
+                    </div>
+                    <div>
+                        <label for="language">
+                            <span>Language</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="language" id="language" name="Language" required type="text" />
+                    </div>
+                    <div>
+                        <label for="currency">
+                            <span>Currency</span>
+                            <strong><span aria-label="required">*</span></strong>
+                        </label>
+                        <input autocomplete="transaction-currency" id="currency" name="Currency" required type="text" />
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Fluff</h2>
+                    <div>
+                        <label for="about">About</label>
+                        <textarea id="about" maxlength="1000" name="About"></textarea>
+                    </div>
+                </section>
+                
+                <section>
+                    <input type="submit" value="Register"/>
+                </section>
+            </form>
+        </main>
+    </body>
+</html>
+ 
