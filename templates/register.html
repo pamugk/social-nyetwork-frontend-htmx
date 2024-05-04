@@ -30,12 +30,6 @@
             padding: 1em;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
         section div + div {
             margin-top: 1em;
         }
@@ -51,13 +45,23 @@
             box-sizing: border-box;
             font: 1em sans-serif;
         }
-        
+
         textarea {
             resize: vertical;
         }
 
-        input:focus, textarea:focus {
+        input:focus, select:invalid, textarea:focus {
             border-color: #000;
+        }
+
+        input:invalid + span::before, select:invalid + span::before, textarea:invalid + span::before {
+            content: "✖";
+            color: red;
+        }
+
+        input:valid + span::before, select:valid + span::before, textarea:valid + span::before {
+            content: "✓";
+            color: green;
         }
 
         form button {
@@ -79,6 +83,7 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="username" autofocus id="login" minlength="3" maxlength="255" name="Login" required type="text" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="password">
@@ -86,6 +91,7 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="new-password" id="password" minlength="5" name="Password" required type="password" />
+                        <span></span>
                     </div>
                 </section>
                 
@@ -97,6 +103,7 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="name" id="full-name" maxlength="1500" name="FullName" required type="text" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="birthday">
@@ -104,6 +111,7 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="bday" id="birthday" name="Birthday" required type="date" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="gender">
@@ -115,14 +123,17 @@
                             <option value="FEMALE">Female</option>
                             <option value="MALE">Male</option>
                         </select>
+                        <span></span>
                     </div>
                     <div>
                         <label for="phone">Phone Number</label>
-                        <input autocomplete="tel" id="phone" name="Phone" type="tel" />
+                        <input autocomplete="tel" id="phone" name="Phone" pattern="^\+[1-9]?[0-9]{7,14}$" type="tel" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="mail">E-mail</label>
                         <input autocomplete="email" id="mail" maxlength="320" name="Email" type="email" />
+                        <span></span>
                     </div>
                 </section>
                 
@@ -134,10 +145,12 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="country-name" id="country" name="Country" required type="text" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="country-region">Country Region</label>
                         <input autocomplete="country-name" id="country-region" name="CountryRegion" type="text" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="language">
@@ -145,6 +158,7 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="language" id="language" name="Language" required type="text" />
+                        <span></span>
                     </div>
                     <div>
                         <label for="currency">
@@ -152,6 +166,7 @@
                             <strong><span aria-label="required">*</span></strong>
                         </label>
                         <input autocomplete="transaction-currency" id="currency" name="Currency" required type="text" />
+                        <span></span>
                     </div>
                 </section>
                 
@@ -160,6 +175,7 @@
                     <div>
                         <label for="about">About</label>
                         <textarea id="about" maxlength="1000" name="About"></textarea>
+                        <span></span>
                     </div>
                 </section>
                 
