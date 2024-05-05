@@ -144,12 +144,18 @@
                             <span>Country</span>
                             <strong><span aria-label="required">*</span></strong>
                         </label>
-                        <input autocomplete="country-name" id="country" name="Country" required type="text" />
+                        <select id="country" name="Country" required>
+                            <option value=""></option>
+                            <option value="RU">Russian Federation</option>
+                            <option value="US">United States of America</option>
+                        </select>
                         <span></span>
                     </div>
                     <div>
                         <label for="country-region">Country Region</label>
-                        <input autocomplete="country-name" id="country-region" name="CountryRegion" type="text" />
+                        <select id="country-region" name="CountryRegion">
+                            <option value=""></option>
+                        </select>
                         <span></span>
                     </div>
                     <div>
@@ -157,7 +163,11 @@
                             <span>Language</span>
                             <strong><span aria-label="required">*</span></strong>
                         </label>
-                        <input autocomplete="language" id="language" name="Language" required type="text" />
+                        <select id="language" name="Language" required>
+                            <option value=""></option>
+                            <option value="en">English</option>
+                            <option value="ru">Russian</option>
+                        </select>
                         <span></span>
                     </div>
                     <div>
@@ -165,7 +175,11 @@
                             <span>Currency</span>
                             <strong><span aria-label="required">*</span></strong>
                         </label>
-                        <input autocomplete="transaction-currency" id="currency" name="Currency" required type="text" />
+                        <select id="currency" name="Currency" required>
+                            <option value=""></option>
+                            <option value="RUB">Russian ruble</option>
+                            <option value="USD">United States dollar</option>
+                        </select>
                         <span></span>
                     </div>
                 </section>
